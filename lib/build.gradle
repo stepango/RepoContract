@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    compile "com.stepango.koptional:koptional:$kOptionalVersion"
+}
+buildscript {
+    ext.kotlin_version = '1.0.5-3'
+    ext.rxJavaVersion = '2.0.2'
+    ext.kOptionalVersion = '1.0.1'
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+repositories {
+    jcenter()
+}
